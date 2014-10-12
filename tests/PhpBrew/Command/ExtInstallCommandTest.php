@@ -1,7 +1,7 @@
 <?php
 use CLIFramework\Testing\CommandTestCase;
 
-class InstallCommandTest extends CommandTestCase
+class ExtInstallCommandTest extends CommandTestCase
 {
     protected $root;
     protected $home;
