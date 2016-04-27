@@ -6,6 +6,9 @@ use PhpBrew\CommandBuilder;
 use PhpBrew\Config;
 use PhpBrew\Build;
 
+
+use PhpBrew\Patches\IntlWith64bitPatch;
+
 /**
  * Task to run `make`
  */
@@ -131,13 +134,12 @@ class ConfigureTask extends BaseTask
         }
 
         if (!$this->options->{'no-patch'}) {
-            $tasks = array(
-                new \PhpBrew\Tasks\Patch64BitSupportTask($this->logger, $this->options),
-                new \PhpBrew\Tasks\PatchDarwinOpenSSLTask($this->logger, $this->options),
-            );
-            foreach ($tasks as $task) {
-                if ($task->match($build)) {
-                    $task->patch($build);
+            $patches = array();
+            $patches[] = new IntlWith64bitPatch;
+            foreach ($patches as $patch) {
+                $this->logger->info("Detecting patch for " . $patch->desc());
+                if ($patch->match($build, $logger)) {
+                    $patch->patch($build, $logger);
                 }
             }
         }
