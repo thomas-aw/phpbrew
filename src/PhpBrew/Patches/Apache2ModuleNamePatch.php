@@ -20,23 +20,39 @@ class Apache2ModuleNamePatch extends Patch
     public function rules()
     {
         $rules = [];
-        $rules[] = RegExpPatchRule::files(array('configure', 'Makefile.global'))
+
+
+
+        /*
+        This is for replacing something like this:
+
+        SAPI_SHARED=libs/libphp$PHP_MAJOR_VERSION.$SHLIB_DL_SUFFIX_NAME
+        SAPI_STATIC=libs/libphp$PHP_MAJOR_VERSION.a
+        SAPI_LIBTOOL=libphp$PHP_MAJOR_VERSION.la
+
+        OVERALL_TARGET=libphp$PHP_MAJOR_VERSION.la
+
+        OVERALL_TARGET=libs/libphp$PHP_MAJOR_VERSION.bundle
+
+        SAPI_SHARED=libs/libphp5.so
+        */
+        $rules[] = RegExpPatchRule::files(array('configure'))
             ->always()
             ->replaces(
-                '#libphp\$\(PHP_MAJOR_VERSION\)#',
-                'libphp$(PHP_VERSION)');
+                '#libphp\$PHP_MAJOR_VERSION\.#',
+                'libphp$PHP_VERSION.');
 
-        $rules[] = RegExpPatchRule::files(array('configure', 'Makefile.global'))
-            ->always()
-            ->replaces(
-                '#libphp\$PHP_MAJOR_VERSION#',
-                'libphp$PHP_VERSION');
-
-        $rules[] = RegExpPatchRule::files(array('configure', 'Makefile.global'))
+        $rules[] = RegExpPatchRule::files(array('configure'))
             ->always()
             ->replaces(
                 '#libs/libphp[57].(so|la)#',
                 'libs/libphp\$PHP_VERSION.$1');
+
+        $rules[] = RegExpPatchRule::files(array('Makefile.global'))
+            ->always()
+            ->replaces(
+                '#libphp\$\(PHP_MAJOR_VERSION\)#',
+                'libphp$(PHP_VERSION)');
 
 
         return $rules;

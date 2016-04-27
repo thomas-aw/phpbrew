@@ -25,9 +25,7 @@ class Apache2ModuleNamePatchTest extends PatchTestCase
             return $this->markTestSkipped("$sourceDirectory does not exist.");
         }
 
-        // Copy the source Makefile to the Makefile
-        copy($sourceFixtureDirectory . '/Makefile.global', $sourceDirectory . '/Makefile.global');
-        copy($sourceFixtureDirectory . '/configure', $sourceDirectory . '/configure');
+        $this->setupBuildDirectory($version);
 
         $build = new Build($version);
         $build->setSourceDirectory($sourceDirectory);

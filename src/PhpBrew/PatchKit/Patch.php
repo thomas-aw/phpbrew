@@ -26,6 +26,7 @@ abstract class Patch
     {
         $cnt = 0;
         if ($rules = $this->rules()) {
+            // todo: should backup all files in one time (some patch rules have the same file names)
             foreach ($rules as $rule) {
                 $rule->backup($build, $logger);
             }
