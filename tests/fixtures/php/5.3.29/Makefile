@@ -17,7 +17,7 @@ RE2C_FLAGS =
 SHLIB_SUFFIX_NAME = dylib
 SHLIB_DL_SUFFIX_NAME = so
 SAPI_CLI_PATH = sapi/cli/php
-BUILD_CLI = $(CXX) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(EXTRA_LDFLAGS_PROGRAM) $(LDFLAGS) $(NATIVE_RPATHS) $(PHP_GLOBAL_OBJS:.lo=.o) $(PHP_CLI_OBJS:.lo=.o) $(PHP_FRAMEWORKS) $(EXTRA_LIBS) $(ZEND_EXTRA_LIBS) -o $(SAPI_CLI_PATH)
+BUILD_CLI = $(CC) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(EXTRA_LDFLAGS_PROGRAM) $(LDFLAGS) $(NATIVE_RPATHS) $(PHP_GLOBAL_OBJS:.lo=.o) $(PHP_CLI_OBJS:.lo=.o) $(PHP_FRAMEWORKS) $(EXTRA_LIBS) $(ZEND_EXTRA_LIBS) -o $(SAPI_CLI_PATH)
 INSTALL_CLI = $(mkinstalldirs) $(INSTALL_ROOT)$(bindir); $(INSTALL) -m 0755 $(SAPI_CLI_PATH) $(INSTALL_ROOT)$(bindir)/$(program_prefix)php$(program_suffix)$(EXEEXT)
 php_fpm_user = nobody
 php_fpm_group = nobody
@@ -25,7 +25,7 @@ php_fpm_sysconfdir = /Users/c9s/.phpbrew/php/php-5.3.29/etc
 php_fpm_localstatedir = /Users/c9s/.phpbrew/php/php-5.3.29/var
 php_fpm_prefix = /Users/c9s/.phpbrew/php/php-5.3.29
 SAPI_FPM_PATH = sapi/fpm/php-fpm
-BUILD_FPM = $(CXX) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(EXTRA_LDFLAGS_PROGRAM) $(LDFLAGS) $(NATIVE_RPATHS) $(PHP_GLOBAL_OBJS:.lo=.o) $(PHP_SAPI_OBJS:.lo=.o) $(PHP_FRAMEWORKS) $(EXTRA_LIBS) $(SAPI_EXTRA_LIBS) $(ZEND_EXTRA_LIBS) -o $(SAPI_FPM_PATH)
+BUILD_FPM = $(CC) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(EXTRA_LDFLAGS_PROGRAM) $(LDFLAGS) $(NATIVE_RPATHS) $(PHP_GLOBAL_OBJS:.lo=.o) $(PHP_SAPI_OBJS:.lo=.o) $(PHP_FRAMEWORKS) $(EXTRA_LIBS) $(SAPI_EXTRA_LIBS) $(ZEND_EXTRA_LIBS) -o $(SAPI_FPM_PATH)
 PROG_SENDMAIL = /usr/sbin/sendmail
 OPENSSL_SHARED_LIBADD =
 SQLITE3_SHARED_LIBADD =
@@ -96,7 +96,7 @@ DEBUG_CFLAGS =
 EXTENSION_DIR = /Users/c9s/.phpbrew/php/php-5.3.29/lib/php/extensions/no-debug-zts-20090626
 EXTRA_LDFLAGS = -L/opt/local/lib -L/opt/local/lib/postgresql92
 EXTRA_LDFLAGS_PROGRAM = -L/opt/local/lib -L/opt/local/lib/postgresql92
-EXTRA_LIBS = -lz -lexslt -lresolv -ledit -lncurses -lpq -lpq -lmcrypt -lltdl -lintl -lcurl -lbz2 -lz -lcrypto -lssl -lcrypto -lm -lxml2 -lcurl -lxml2 -licui18n -licuuc -licudata -licuio -lxml2 -lxml2 -lxml2 -lxml2 -lxml2 -lxml2 -lxslt -lstdc++
+EXTRA_LIBS = -lz -lexslt -lresolv -ledit -lncurses -lpq -lpq -lmcrypt -lltdl -lintl -lcurl -lbz2 -lz -lcrypto -lssl -lcrypto -lm -lxml2 -lcurl -lxml2 -licui18n -licuuc -licudata -licuio -lxml2 -lxml2 -lxml2 -lxml2 -lxml2 -lxml2 -lxslt
 ZEND_EXTRA_LIBS =
 INCLUDES = -I/Users/c9s/.phpbrew/build/php-5.3.29/ext/date/lib -I/Users/c9s/.phpbrew/build/php-5.3.29/ext/ereg/regex -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/libxml2 -I/opt/local/include -I/Users/c9s/.phpbrew/build/php-5.3.29/ext/mbstring/oniguruma -I/Users/c9s/.phpbrew/build/php-5.3.29/ext/mbstring/libmbfl -I/Users/c9s/.phpbrew/build/php-5.3.29/ext/mbstring/libmbfl/mbfl -I/opt/local/include/postgresql92 -I/Users/c9s/.phpbrew/build/php-5.3.29/ext/sqlite3/libsqlite -I/usr/include/libxml2 -I$(top_builddir)/TSRM -I$(top_builddir)/Zend
 EXTRA_INCLUDES =
