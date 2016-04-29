@@ -39,12 +39,12 @@ class Config
 
     public static function setPhpbrewHome($home)
     {
-        putenv('PHPBREW_HOME='.  $home);
+        putenv('PHPBREW_HOME=' . $home);
     }
 
     public static function setPhpbrewRoot($root)
     {
-        putenv('PHPBREW_ROOT='.  $root);
+        putenv('PHPBREW_ROOT=' . $root);
     }
 
     public static function getRoot()
@@ -59,6 +59,15 @@ class Config
             return $home . DIRECTORY_SEPARATOR . '.phpbrew';
         }
         throw new Exception('Environment variable PHPBREW_ROOT is required');
+    }
+
+    public static function getPhpbrewConfigDir()
+    {
+        $dir = self::getPhpbrewRoot() . DIRECTORY_SEPARATOR . 'dir';
+        if (!file_exists($dir)) {
+            mkdir($dir, 0755, true);
+        }
+        return $dir;
     }
 
     /**
@@ -156,6 +165,37 @@ class Config
         return self::getVersionInstallPrefix($buildName) . DIRECTORY_SEPARATOR . 'bin';
     }
 
+    static public function findInstalledBuilds($stripPrefix = true)
+    {
+        $path = self::getPhpbrewRoot() . DIRECTORY_SEPARATOR . 'php';
+        if (!file_exists($path)) {
+            throw new Exception($path . ' does not exist.');
+        }
+        $names = scandir($path);
+        $names = array_filter($names, function ($name) use ($path) {
+            return $name != '.' && $name != '..' && file_exists($path . DIRECTORY_SEPARATOR . $name . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'php');
+        });
+
+        if ($names == null || empty($names)) {
+            return array();
+        }
+
+        if ($stripPrefix) {
+            $names = array_map(function ($name) {
+                return preg_replace('/^php-(?=(\d+\.\d+\.\d+)$)/', '', $name);
+            }, $names);
+        }
+        uasort($names, 'version_compare'); // ordering version name ascending... 5.5.17, 5.5.12
+        return array_reverse($names);  // make it descending... since there is no sort function for user-define in reverse order.
+    }
+
+    static public function findMatchedBuilds($buildNameRE = '', $stripPrefix = true)
+    {
+        $builds = self::findInstalledBuilds($stripPrefix);
+        return array_filter($builds, function ($build) use ($buildNameRE) {
+            return preg_match("/^$buildNameRE/i", $build);
+        });
+    }
 
     public static function putPathEnvFor($buildName)
     {
@@ -207,6 +247,7 @@ class Config
         return self::getCurrentPhpDir() . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'php-config';
     }
 
+
     public static function getCurrentPhpizeBin()
     {
         return self::getCurrentPhpDir() . DIRECTORY_SEPARATOR . 'bin' . DIRECTORY_SEPARATOR . 'phpize';
@@ -229,7 +270,6 @@ class Config
     }
 
 
-
     // XXX: needs to be removed.
     public static function useSystemPhpVersion()
     {
@@ -239,7 +279,7 @@ class Config
     // XXX: needs to be removed.
     public static function setPhpVersion($phpVersion)
     {
-        self::$currentPhpVersion = 'php-'.$phpVersion;
+        self::$currentPhpVersion = 'php-' . $phpVersion;
     }
 
 
