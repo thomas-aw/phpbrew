@@ -2,6 +2,7 @@
 namespace PhpBrew;
 
 use CLIFramework\Logger;
+use CLIFramework\ServiceContainer;
 use PhpBrew\Exception\SystemCommandException;
 use Exception;
 use RecursiveDirectoryIterator;
@@ -366,4 +367,10 @@ class Utils
         $editor = escapeshellarg(getenv('EDITOR') ?: 'nano');
         exec("{$editor} {$file} > {$tty}");
     }
+
+    public static function getGlobalLogger() {
+        $container = ServiceContainer::getInstance();
+        return $container['logger'];
+    }
+
 }
