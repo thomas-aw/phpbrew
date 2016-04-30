@@ -63,7 +63,7 @@ class Config
 
     public static function getPhpbrewConfigDir()
     {
-        $dir = self::getPhpbrewRoot() . DIRECTORY_SEPARATOR . 'dir';
+        $dir = self::getRoot() . DIRECTORY_SEPARATOR . 'dir';
         if (!file_exists($dir)) {
             mkdir($dir, 0755, true);
         }
