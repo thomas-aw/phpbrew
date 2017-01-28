@@ -4,8 +4,6 @@ namespace PhpBrew\Command;
 
 use CLIFramework\Command;
 use PhpBrew\Config;
-use PhpBrew\BuildFinder;
-use Exception;
 
 /**
  * @codeCoverageIgnore

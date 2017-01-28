@@ -2,20 +2,9 @@
 
 namespace PhpBrew\Command\FpmCommand;
 
-use PhpBrew\Config;
-use PhpBrew\Downloader\DownloadFactory;
-use PhpBrew\VariantParser;
-use PhpBrew\VariantBuilder;
-use PhpBrew\Tasks\DownloadTask;
-use PhpBrew\Build;
-use PhpBrew\ReleaseList;
-use PhpBrew\VersionDslParser;
-use PhpBrew\BuildSettings\DefaultBuildSettings;
-use PhpBrew\Distribution\DistributionUrlPolicy;
-use CLIFramework\ValueCollection;
 use CLIFramework\Command;
-use PhpBrew\Exception\SystemCommandException;
-use Exception;
+use CLIFramework\ValueCollection;
+use PhpBrew\Config;
 
 
 class SetupCommand extends Command

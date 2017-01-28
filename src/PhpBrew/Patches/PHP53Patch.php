@@ -2,10 +2,10 @@
 
 namespace PhpBrew\Patches;
 
-use PhpBrew\Buildable;
-use PhpBrew\PatchKit\Patch;
-use PhpBrew\PatchKit\DiffPatchRule;
 use CLIFramework\Logger;
+use PhpBrew\Buildable;
+use PhpBrew\PatchKit\DiffPatchRule;
+use PhpBrew\PatchKit\Patch;
 
 class GistContent
 {

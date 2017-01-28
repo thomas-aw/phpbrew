@@ -4,7 +4,6 @@ namespace PhpBrew;
 
 use CLIFramework\Logger;
 use GetOptionKit\OptionResult;
-use Exception;
 use PhpBrew\Downloader\DownloadFactory;
 use RuntimeException;
 

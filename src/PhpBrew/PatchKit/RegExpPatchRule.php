@@ -2,8 +2,8 @@
 
 namespace PhpBrew\PatchKit;
 
-use PhpBrew\Buildable;
 use CLIFramework\Logger;
+use PhpBrew\Buildable;
 
 /**
  * RegExpPatchRule implements a pcre_replace based patch rule.

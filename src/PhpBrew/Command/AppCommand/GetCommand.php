@@ -2,11 +2,10 @@
 
 namespace PhpBrew\Command\AppCommand;
 
-use PhpBrew\Downloader\DownloadFactory;
-use PhpBrew\Config;
-use PhpBrew\AppStore;
 use CLIFramework\Command;
-use Exception;
+use PhpBrew\AppStore;
+use PhpBrew\Config;
+use PhpBrew\Downloader\DownloadFactory;
 
 class GetCommand extends Command
 {

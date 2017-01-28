@@ -2,11 +2,11 @@
 
 namespace PhpBrew\Command;
 
-use PhpBrew\Tasks\MakeTask;
+use CLIFramework\Command;
 use PhpBrew\Build;
 use PhpBrew\Config;
+use PhpBrew\Tasks\MakeTask;
 use PhpBrew\Utils;
-use CLIFramework\Command;
 
 class CleanCommand extends Command
 {

@@ -4,7 +4,6 @@ namespace PhpBrew;
 
 use CLIFramework\Logger;
 use GetOptionKit\OptionResult;
-use PhpBrew\Extension\Provider;
 
 class ExtensionList
 {

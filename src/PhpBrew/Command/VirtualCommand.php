@@ -5,7 +5,6 @@ namespace PhpBrew\Command;
 /*
  * @codeCoverageIgnore
  */
-use Exception;
 
 class VirtualCommand extends \CLIFramework\Command
 {

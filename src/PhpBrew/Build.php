@@ -2,8 +2,8 @@
 
 namespace PhpBrew;
 
-use Serializable;
 use PhpBrew\BuildSettings\BuildSettings;
+use Serializable;
 
 /**
  * A build object contains version information,

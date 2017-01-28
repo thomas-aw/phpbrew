@@ -4,7 +4,6 @@ namespace PhpBrew\Command;
 
 use PhpBrew\Config;
 use PhpBrew\PhpBrew;
-use Exception;
 
 class EachCommand extends \CLIFramework\Command
 {

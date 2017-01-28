@@ -5,7 +5,6 @@ namespace PhpBrew\Command;
 /*
  * @codeCoverageIgnore
  */
-use Exception;
 use CLIFramework\Command;
 use PhpBrew\Config;
 use PhpBrew\Utils;

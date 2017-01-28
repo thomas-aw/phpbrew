@@ -2,12 +2,12 @@
 
 namespace PhpBrew\Extension;
 
+use CLIFramework\Logger;
+use GetOptionKit\OptionResult;
 use PhpBrew\Config;
 use PhpBrew\Downloader\DownloadFactory;
 use PhpBrew\Extension\Provider\Provider;
 use PhpBrew\Utils;
-use CLIFramework\Logger;
-use GetOptionKit\OptionResult;
 
 class ExtensionDownloader
 {

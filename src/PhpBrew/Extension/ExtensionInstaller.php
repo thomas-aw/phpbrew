@@ -3,10 +3,10 @@
 namespace PhpBrew\Extension;
 
 use CLIFramework\Logger;
-use PhpBrew\Config;
-use PhpBrew\Utils;
-use PhpBrew\Tasks\MakeTask;
 use GetOptionKit\OptionResult;
+use PhpBrew\Config;
+use PhpBrew\Tasks\MakeTask;
+use PhpBrew\Utils;
 
 class ExtensionInstaller
 {

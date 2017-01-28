@@ -2,13 +2,13 @@
 
 namespace PhpBrew;
 
-use CLIFramework\Application;
-use CLIFramework\Exception\CommandNotFoundException;
-use CLIFramework\Exception\CommandArgumentNotEnoughException;
-use CLIFramework\ExceptionPrinter\ProductionExceptionPrinter;
-use CLIFramework\ExceptionPrinter\DevelopmentExceptionPrinter;
-use Exception;
 use BadMethodCallException;
+use CLIFramework\Application;
+use CLIFramework\Exception\CommandArgumentNotEnoughException;
+use CLIFramework\Exception\CommandNotFoundException;
+use CLIFramework\ExceptionPrinter\DevelopmentExceptionPrinter;
+use CLIFramework\ExceptionPrinter\ProductionExceptionPrinter;
+use Exception;
 use PhpBrew\Exception\SystemCommandException;
 
 class Console extends Application

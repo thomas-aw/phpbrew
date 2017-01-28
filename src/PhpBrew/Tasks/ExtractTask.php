@@ -2,8 +2,8 @@
 
 namespace PhpBrew\Tasks;
 
-use PhpBrew\Exception\SystemCommandException;
 use PhpBrew\Build;
+use PhpBrew\Exception\SystemCommandException;
 
 /**
  * Task to download php distributions.

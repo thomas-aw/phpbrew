@@ -2,31 +2,29 @@
 
 namespace PhpBrew\Command;
 
-use PhpBrew\Config;
-use PhpBrew\Downloader\DownloadFactory;
-use PhpBrew\VariantParser;
-use PhpBrew\VariantBuilder;
-use PhpBrew\Tasks\DownloadTask;
-use PhpBrew\Tasks\PrepareDirectoryTask;
-use PhpBrew\Tasks\MakeTask;
-use PhpBrew\Tasks\InstallTask;
-use PhpBrew\Tasks\ExtractTask;
-use PhpBrew\Tasks\BeforeConfigureTask;
-use PhpBrew\Tasks\ConfigureTask;
-use PhpBrew\Tasks\AfterConfigureTask;
-use PhpBrew\Tasks\BuildTask;
-use PhpBrew\Tasks\DSymTask;
-use PhpBrew\Tasks\TestTask;
-use PhpBrew\Build;
-use PhpBrew\ReleaseList;
-use PhpBrew\VersionDslParser;
-use PhpBrew\BuildSettings\DefaultBuildSettings;
-use PhpBrew\Distribution\DistributionUrlPolicy;
-use CLIFramework\ValueCollection;
 use CLIFramework\Command;
+use CLIFramework\ValueCollection;
+use PhpBrew\Build;
+use PhpBrew\BuildSettings\DefaultBuildSettings;
+use PhpBrew\Config;
+use PhpBrew\Distribution\DistributionUrlPolicy;
+use PhpBrew\Downloader\DownloadFactory;
 use PhpBrew\Exception\SystemCommandException;
-use Exception;
-use PhpBrew\PatchKit\RegExpPatchRule;
+use PhpBrew\ReleaseList;
+use PhpBrew\Tasks\AfterConfigureTask;
+use PhpBrew\Tasks\BeforeConfigureTask;
+use PhpBrew\Tasks\BuildTask;
+use PhpBrew\Tasks\ConfigureTask;
+use PhpBrew\Tasks\DownloadTask;
+use PhpBrew\Tasks\DSymTask;
+use PhpBrew\Tasks\ExtractTask;
+use PhpBrew\Tasks\InstallTask;
+use PhpBrew\Tasks\MakeTask;
+use PhpBrew\Tasks\PrepareDirectoryTask;
+use PhpBrew\Tasks\TestTask;
+use PhpBrew\VariantBuilder;
+use PhpBrew\VariantParser;
+use PhpBrew\VersionDslParser;
 
 class InstallCommand extends Command
 {

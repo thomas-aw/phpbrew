@@ -3,8 +3,8 @@
 namespace PhpBrew\Testing;
 
 use CLIFramework\Testing\CommandTestCase as BaseCommandTestCase;
-use PhpBrew\Console;
 use GetOptionKit\Option;
+use PhpBrew\Console;
 
 abstract class CommandTestCase extends BaseCommandTestCase
 {

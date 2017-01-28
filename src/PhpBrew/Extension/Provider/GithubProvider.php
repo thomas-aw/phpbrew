@@ -2,8 +2,6 @@
 
 namespace PhpBrew\Extension\Provider;
 
-use Exception;
-
 class GithubProvider implements Provider
 {
     public $site = 'github.com';

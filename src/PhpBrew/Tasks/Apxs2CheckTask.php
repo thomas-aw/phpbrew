@@ -2,9 +2,8 @@
 
 namespace PhpBrew\Tasks;
 
-use Exception;
-use PhpBrew\Utils;
 use PhpBrew\Build;
+use PhpBrew\Utils;
 
 class Apxs2CheckTask extends BaseTask
 {

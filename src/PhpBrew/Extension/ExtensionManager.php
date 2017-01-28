@@ -2,11 +2,10 @@
 
 namespace PhpBrew\Extension;
 
-use Exception;
 use CLIFramework\Logger;
-use PhpBrew\Utils;
 use PhpBrew\Config;
 use PhpBrew\Tasks\MakeTask;
+use PhpBrew\Utils;
 
 class ExtensionManager
 {

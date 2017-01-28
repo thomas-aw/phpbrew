@@ -2,8 +2,8 @@
 
 namespace PhpBrew\Extension;
 
-use PhpBrew\Config;
 use PhpBrew\Buildable;
+use PhpBrew\Config;
 
 class Extension implements Buildable
 {

@@ -3,11 +3,10 @@
 namespace PhpBrew\Extension\Provider;
 
 use CLIFramework\Logger;
-use GetOptionKit\OptionResult;
-use PEARX\Channel as PeclChannel;
 use CurlKit\CurlDownloader;
 use DOMDocument;
-use Exception;
+use GetOptionKit\OptionResult;
+use PEARX\Channel as PeclChannel;
 use PhpBrew\Downloader\DownloadFactory;
 
 class PeclProvider implements Provider

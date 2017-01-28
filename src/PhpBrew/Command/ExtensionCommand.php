@@ -2,12 +2,12 @@
 
 namespace PhpBrew\Command;
 
-use PhpBrew\Config;
-use PhpBrew\Extension\ExtensionFactory;
-use PhpBrew\Extension\M4Extension;
-use PhpBrew\Extension\Extension;
 use Exception;
 use PhpBrew\Command\ExtensionCommand\BaseCommand;
+use PhpBrew\Config;
+use PhpBrew\Extension\Extension;
+use PhpBrew\Extension\ExtensionFactory;
+use PhpBrew\Extension\M4Extension;
 
 class ExtensionCommand extends BaseCommand
 {

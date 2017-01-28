@@ -2,14 +2,13 @@
 
 namespace PhpBrew\Command;
 
-use Exception;
-use PhpBrew\Config;
-use PhpBrew\Downloader\DownloadFactory;
-use PhpBrew\Tasks\DownloadTask;
-use PhpBrew\Tasks\PrepareDirectoryTask;
-use PhpBrew\ReleaseList;
 use CLIFramework\Command;
 use CLIFramework\ValueCollection;
+use PhpBrew\Config;
+use PhpBrew\Downloader\DownloadFactory;
+use PhpBrew\ReleaseList;
+use PhpBrew\Tasks\DownloadTask;
+use PhpBrew\Tasks\PrepareDirectoryTask;
 
 class DownloadCommand extends Command
 {

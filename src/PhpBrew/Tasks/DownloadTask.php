@@ -2,7 +2,6 @@
 
 namespace PhpBrew\Tasks;
 
-use Exception;
 use PhpBrew\Downloader\DownloadFactory;
 
 /**

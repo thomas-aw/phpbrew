@@ -3,7 +3,6 @@
 namespace PhpBrew\Command\ExtensionCommand;
 
 use PhpBrew\Config;
-use PhpBrew\Extension;
 use PhpBrew\Extension\ExtensionFactory;
 use PhpBrew\Extension\ExtensionManager;
 

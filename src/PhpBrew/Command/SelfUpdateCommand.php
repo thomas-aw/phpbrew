@@ -2,10 +2,9 @@
 
 namespace PhpBrew\Command;
 
-use Exception;
+use CLIFramework\Command;
 use PhpBrew\Downloader\DownloadFactory;
 use RuntimeException;
-use CLIFramework\Command;
 
 class SelfUpdateCommand extends Command
 {

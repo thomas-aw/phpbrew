@@ -3,9 +3,8 @@
 namespace PhpBrew\Command\ExtensionCommand;
 
 use PhpBrew\Config;
-use PhpBrew\Extension;
-use PhpBrew\Utils;
 use PhpBrew\Extension\ExtensionFactory;
+use PhpBrew\Utils;
 
 class ConfigCommand extends BaseCommand
 {

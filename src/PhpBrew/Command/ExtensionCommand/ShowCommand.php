@@ -4,9 +4,8 @@ namespace PhpBrew\Command\ExtensionCommand;
 
 use PhpBrew\Config;
 use PhpBrew\Extension\Extension;
-use PhpBrew\Extension\PeclExtension;
 use PhpBrew\Extension\ExtensionFactory;
-use Exception;
+use PhpBrew\Extension\PeclExtension;
 
 class ShowCommand extends BaseCommand
 {

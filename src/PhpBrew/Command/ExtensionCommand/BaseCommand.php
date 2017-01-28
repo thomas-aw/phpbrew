@@ -2,8 +2,6 @@
 
 namespace PhpBrew\Command\ExtensionCommand;
 
-use PhpBrew\Extension;
-
 abstract class BaseCommand extends \CLIFramework\Command
 {
     public function prepare()

@@ -2,11 +2,11 @@
 
 namespace PhpBrew\Extension;
 
-use PhpBrew\Config;
-use PEARX\PackageXml\Parser as PackageXmlParser;
 use Exception;
-use RecursiveIteratorIterator;
+use PEARX\PackageXml\Parser as PackageXmlParser;
+use PhpBrew\Config;
 use RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 /**
  * This factory class handles the extension information.
