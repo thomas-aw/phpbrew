@@ -16,6 +16,12 @@
     "bin": [
         "bin/phpbrew"
     ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/thomas-aw/PEARX"
+        }
+    ],
     "require": {
         "corneltek/cliframework": "3.0.x-dev",
         "corneltek/class-template": "^2",
