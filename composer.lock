@@ -290,7 +290,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thomas-aw/PEARX",
-                "reference": "ccfd144bd908acecc67e34d70678a4401ce2b5bb"
+                "reference": "57977ae7abc365d990217ea633bda5d31419abf0"
             },
             "require": {
                 "corneltek/cachekit": "^1",
@@ -319,7 +319,7 @@
             ],
             "description": "PEAR channel client",
             "homepage": "http://github.com/c9s/PEARX",
-            "time": "2018-10-04 14:58:15"
+            "time": "2018-10-05 07:35:10"
         },
         {
             "name": "corneltek/serializerkit",
@@ -1580,6 +1580,7 @@
                 "github",
                 "test"
             ],
+            "abandoned": "php-coveralls/php-coveralls",
             "time": "2016-01-20 17:35:46"
         },
         {
